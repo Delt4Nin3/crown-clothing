@@ -1,4 +1,5 @@
 import React from 'react';
+import 'typeface-open-sans-condensed';
 import './App.css';
 
 import HomePage from "./components/homepage/homepage.component";
