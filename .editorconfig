@@ -24,6 +24,7 @@ ij_css_value_alignment = do_not_align
 ij_css_keep_blank_lines_in_code = 1
 
 [*.json]
+indent_size = 2
 ij_json_space_before_colon = false
 ij_json_space_after_colon = true
 ij_json_spaces_within_braces = true

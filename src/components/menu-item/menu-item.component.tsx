@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {withRouter, match} from 'react-router-dom';
 import {History} from 'history'
 import './menu-item.styles.scss';
@@ -12,7 +12,7 @@ interface MenuItemProps {
   history: History
 }
 
-class MenuItem extends Component<MenuItemProps, any> {
+class MenuItem extends React.Component<MenuItemProps, any> {
   render() {
     return <div
       className={`menu-item ${this.props.size}`}

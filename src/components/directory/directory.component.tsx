@@ -1,7 +1,8 @@
-import React, {Component} from "react";
+import React from "react";
 import './directory.styles.scss';
 
-import MenuItem from "../menu-item/menu-item.component";
+import MenuItem from "components/menu-item/menu-item.component";
+import SECTIONS_DATA from "data/sections.data";
 
 interface Section {
   title: string
@@ -15,42 +16,12 @@ interface State {
   sections: Section[]
 }
 
-class Directory extends Component<any, State> {
+class Directory extends React.Component<any, State> {
   constructor(props: any) {
     super(props);
 
     this.state = {
-      sections: [{
-        title: 'hats',
-        imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
-        id: 1,
-        size: '',
-        linkUrl: 'hats'
-      }, {
-        title: 'jackets',
-        imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
-        id: 2,
-        size: '',
-        linkUrl: 'jackets'
-      }, {
-        title: 'sneakers',
-        imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
-        id: 3,
-        size: '',
-        linkUrl: 'sneakers'
-      }, {
-        title: 'womens',
-        imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
-        id: 4,
-        size: 'large',
-        linkUrl: 'women'
-      }, {
-        title: 'men',
-        imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
-        id: 5,
-        size: 'large',
-        linkUrl: 'men'
-      }]
+      sections: SECTIONS_DATA
     }
   }
 
