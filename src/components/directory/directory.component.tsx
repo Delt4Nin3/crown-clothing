@@ -1,8 +1,7 @@
 import React from "react";
-import './directory.styles.scss';
-
 import MenuItem from "components/menu-item/menu-item.component";
 import SECTIONS_DATA from "data/sections.data";
+import './directory.styles.scss';
 
 interface Section {
   title: string
