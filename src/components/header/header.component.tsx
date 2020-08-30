@@ -4,9 +4,15 @@ import { ReactComponent as Logo } from "assets/crown.svg";
 import { auth } from 'firebase/firebase.utils';
 import './header.styles.scss';
 
+interface User {
+  id: string
+  displayName: string
+  email: string
+  createdAt: unknown
+}
 
 interface Props {
-  currentUser: User | null
+  currentUser?: User
 }
 
 class Header extends React.Component<Props, any> {
