@@ -1,6 +1,6 @@
 import React from 'react';
-import {withRouter, match} from 'react-router-dom';
-import {History} from 'history'
+import { match, withRouter } from 'react-router-dom';
+import { History } from 'history'
 import './menu-item.styles.scss';
 
 interface MenuItemProps {
