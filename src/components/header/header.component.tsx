@@ -16,6 +16,7 @@ interface User {
 
 interface Props {
   currentUser?: User
+  hidden: boolean
 }
 
 class Header extends React.Component<Props, any> {
@@ -40,13 +41,14 @@ class Header extends React.Component<Props, any> {
         }
         <CartIcon/>
       </div>
-      <CartDropdown/>
+      {this.props.hidden ? null : <CartDropdown/>}
     </div>
   }
 }
 
 const mapStateToProps = (state: any) => ({
-  currentUser: state.user.currentUser
+  currentUser: state.user.currentUser,
+  hidden: state.cart.hidden,
 });
 
 export default connect(mapStateToProps)(Header);
