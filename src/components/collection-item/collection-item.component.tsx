@@ -1,4 +1,5 @@
 import React from 'react';
+import CustomButton from "components/custom-button/custom-button.component";
 import './collection-item.styles.scss'
 
 interface CollectionItemProps {
@@ -20,6 +21,7 @@ class CollectionItem extends React.Component<CollectionItemProps, any> {
         <span className={'name'}>{this.props.name}</span>
         <span className={'price'}>{this.props.price}</span>
       </div>
+      <CustomButton inverted>Add to Cart</CustomButton>
     </div>
   }
 }
