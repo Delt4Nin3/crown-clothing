@@ -22,8 +22,8 @@ class CollectionPreview extends React.Component<CollectionPreviewProps, any> {
         {
           this.props.items
             .filter((item, idx) => idx < 4)
-            .map(({id, ...itemProps}) => {
-              return <CollectionItem key={id} {...itemProps} />
+            .map((item) => {
+              return <CollectionItem key={item.id} item={item} />
             })
         }
       </div>
