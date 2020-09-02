@@ -1,15 +1,8 @@
 import React from "react";
 import MenuItem from "components/menu-item/menu-item.component";
 import SECTIONS_DATA from "data/sections.data";
+import { Section } from "interfaces";
 import './directory.styles.scss';
-
-interface Section {
-  title: string
-  imageUrl: string
-  id: number
-  size: string,
-  linkUrl: string
-}
 
 interface State {
   sections: Section[]

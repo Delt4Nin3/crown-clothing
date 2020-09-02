@@ -6,13 +6,7 @@ import './header.styles.scss';
 import { connect } from "react-redux";
 import CartIcon from "components/cart-icon/cart-icon.component";
 import CartDropdown from "components/cart-dropdown/cart-dropdown.component";
-
-interface User {
-  id: string
-  displayName: string
-  email: string
-  createdAt: unknown
-}
+import { User } from 'interfaces';
 
 interface Props {
   currentUser?: User

@@ -9,13 +9,7 @@ import Header from "./components/header/header.component";
 import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.page";
 import { auth, createUserProfileDocument } from 'firebase/firebase.utils';
 import { setCurrentUser } from "./redux/user";
-
-interface User {
-  id: string
-  displayName: string
-  email: string
-  createdAt: unknown
-}
+import { User } from "./interfaces";
 
 interface State {
   currentUser?: User
@@ -73,7 +67,7 @@ const mapStateToProps = ({user}) => ({
 })
 
 const mapDispatchToProps = (dispatch: any) => ({
-  setCurrentUser: (user: any) => dispatch(setCurrentUser(user))
+  setCurrentUser: (user: User) => dispatch(setCurrentUser(user))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

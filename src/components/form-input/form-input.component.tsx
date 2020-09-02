@@ -1,14 +1,6 @@
 import React from 'react';
+import { FormInput as  FormInputProps } from 'interfaces';
 import './form-input.styles.scss'
-
-interface FormInputProps {
-  handleChange?: any
-  label?: string
-  name?: string
-  required?: boolean
-  type: string
-  value: string
-}
 
 class FormInput extends React.Component<FormInputProps, any> {
   render() {

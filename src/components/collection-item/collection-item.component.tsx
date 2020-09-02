@@ -3,20 +3,14 @@ import CustomButton from "components/custom-button/custom-button.component";
 import './collection-item.styles.scss'
 import { connect } from "react-redux";
 import { addItem } from "redux/cart";
+import { Item } from "interfaces";
 
-
-interface Item {
-  name: string
-  imageUrl: string
-  price: number
-}
-
-interface CollectionItemProps {
+interface Props {
   item: Item
   addItem: any
 }
 
-class CollectionItem extends React.Component<CollectionItemProps, any> {
+class CollectionItem extends React.Component<Props, any> {
   render() {
     return <div className={'collection-item'}>
       <div

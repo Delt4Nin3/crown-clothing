@@ -5,7 +5,6 @@ import { connect } from 'react-redux'
 import { toggleCartHidden } from 'redux/cart';
 
 class CartIcon extends React.Component<any, any> {
-
   render() {
     return <div className={'cart-icon'} onClick={this.props.toggleCartHidden}>
       <ShoppingIcon className={'shopping-icon'}/>
