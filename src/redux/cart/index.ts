@@ -1,3 +1,6 @@
+import { createSelector } from "reselect";
+import { CartItem } from "../../interfaces";
+
 const CartActionTypes = {
   TOGGLE_CART_HIDDEN: 'TOGGLE_CART_HIDDEN',
   ADD_ITEM: 'ADD_ITEM',
@@ -50,4 +53,13 @@ const addItemToCart = (cartItems: any, cartItemToAdd: any) => {
   return [...cartItems, {...cartItemToAdd, quantity: 1}]
 }
 
-export { cartReducer, toggleCartHidden, addItem, CartActionTypes }
+const selectCart = (state: any) => state.cart;
+
+const selectCartItems = createSelector([selectCart], cart => cart.cartItems)
+
+const selectCartItemsCount = createSelector([selectCartItems], cartItems => cartItems.reduce((accumulatedQuantity: number, cartItem: CartItem) => {
+  return accumulatedQuantity + cartItem.quantity
+}, 0))
+
+
+export { cartReducer, toggleCartHidden, addItem, CartActionTypes, selectCartItems, selectCartItemsCount }
