@@ -1,5 +1,5 @@
 import { createSelector } from "reselect";
-import { CartItem } from "../../interfaces";
+import { CartItem, Item } from "../../interfaces";
 
 const CartActionTypes = {
   TOGGLE_CART_HIDDEN: 'TOGGLE_CART_HIDDEN',
@@ -10,7 +10,7 @@ const toggleCartHidden = () => ({
   type: CartActionTypes.TOGGLE_CART_HIDDEN,
 });
 
-const addItem = (item: any) => ({
+const addItem = (item: Item) => ({
   type: CartActionTypes.ADD_ITEM,
   payload: item,
 });

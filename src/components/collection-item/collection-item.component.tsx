@@ -7,7 +7,7 @@ import { Item } from "interfaces";
 
 interface Props {
   item: Item
-  addItem: any
+  addItem(item: Item): any
 }
 
 class CollectionItem extends React.Component<Props, any> {

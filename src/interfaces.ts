@@ -1,3 +1,5 @@
+import React from "react";
+
 export interface User {
   id: string
   displayName: string
@@ -32,7 +34,7 @@ export interface CartItem extends Item {
 }
 
 export interface FormInput {
-  handleChange?: any
+  handleChange?(event: React.ChangeEvent): void
   label?: string
   name?: string
   required?: boolean
