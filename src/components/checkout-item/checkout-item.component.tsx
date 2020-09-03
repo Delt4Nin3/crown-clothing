@@ -10,8 +10,7 @@ class CheckoutItem extends React.Component<any, any> {
       <span className={'name'}>{this.props.cartItem.name}</span>
       <span className={'quantity'}>{this.props.cartItem.quantity}</span>
       <span className={'price'}>{this.props.cartItem.price}</span>
-      <div className={'remove-button'}>&#1005;</div>
-
+      <div className={'remove-button'}>&#10005;</div>
     </div>;
   }
 }
