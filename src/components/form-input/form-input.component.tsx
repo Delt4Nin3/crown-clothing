@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormInput as  FormInputProps } from 'interfaces';
+import { FormInput as FormInputProps } from 'interfaces';
 import './form-input.styles.scss'
 
 class FormInput extends React.Component<FormInputProps, any> {

@@ -7,6 +7,7 @@ import { Item } from "interfaces";
 
 interface Props {
   item: Item
+
   addItem(item: Item): any
 }
 

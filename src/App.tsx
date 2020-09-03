@@ -7,9 +7,11 @@ import HomePage from "./pages/homepage/homepage.page";
 import ShopPage from "./pages/shop/shop.page";
 import Header from "./components/header/header.component";
 import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.page";
+import CheckoutPage from "./pages/checkout/checkout.page";
 import { auth, createUserProfileDocument } from 'firebase/firebase.utils';
 import { selectCurrentUser, setCurrentUser } from "./redux/user";
 import { User } from "./interfaces";
+import { createStructuredSelector } from "reselect";
 
 interface State {
   currentUser?: User
@@ -52,6 +54,7 @@ class App extends React.Component<any, State> {
       <Switch>
         <Route exact path={'/'} component={HomePage}/>
         <Route exact path={'/shop'} component={ShopPage}/>
+        <Route exact path={'/checkout'} component={CheckoutPage}/>
         <Route exact path={'/signin'} render={
           () => {
             return this.props.currentUser ? (<Redirect to='/'/>) : (<SignInAndSignUpPage/>)
