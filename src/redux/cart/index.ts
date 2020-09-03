@@ -26,7 +26,7 @@ const cartReducer = (state: object = INITIAL_STATE, action: any) => {
       return {
         ...state,
         // @ts-ignore-next-line
-        hidden: (state.hidden ? false : true),
+        hidden: (!state.hidden),
       }
     case CartActionTypes.ADD_ITEM:
       return {
