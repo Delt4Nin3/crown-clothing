@@ -8,7 +8,7 @@ import ShopPage from "./pages/shop/shop.page";
 import Header from "./components/header/header.component";
 import SignInAndSignUpPage from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.page";
 import { auth, createUserProfileDocument } from 'firebase/firebase.utils';
-import { setCurrentUser } from "./redux/user";
+import { selectCurrentUser, setCurrentUser } from "./redux/user";
 import { User } from "./interfaces";
 
 interface State {
@@ -62,8 +62,8 @@ class App extends React.Component<any, State> {
 }
 
 // @ts-ignore-next-line
-const mapStateToProps = ({user}) => ({
-  currentUser: user.currentUser
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser
 })
 
 const mapDispatchToProps = (dispatch: any) => ({

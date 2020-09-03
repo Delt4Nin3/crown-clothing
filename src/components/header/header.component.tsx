@@ -7,6 +7,9 @@ import { connect } from "react-redux";
 import CartIcon from "components/cart-icon/cart-icon.component";
 import CartDropdown from "components/cart-dropdown/cart-dropdown.component";
 import { User } from 'interfaces';
+import { createStructuredSelector } from "reselect";
+import { selectCurrentUser } from "redux/user";
+import { selectCartHidden } from "redux/cart";
 
 interface Props {
   currentUser?: User
@@ -40,9 +43,9 @@ class Header extends React.Component<Props, any> {
   }
 }
 
-const mapStateToProps = (state: any) => ({
-  currentUser: state.user.currentUser,
-  hidden: state.cart.hidden,
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser,
+  hidden: selectCartHidden,
 });
 
 export default connect(mapStateToProps)(Header);
