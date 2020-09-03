@@ -57,9 +57,26 @@ const selectCart = (state: any) => state.cart;
 
 const selectCartItems = createSelector([selectCart], cart => cart.cartItems)
 
-const selectCartItemsCount = createSelector([selectCartItems], cartItems => cartItems.reduce((accumulatedQuantity: number, cartItem: CartItem) => {
-  return accumulatedQuantity + cartItem.quantity
-}, 0))
+const selectCartHidden = createSelector(
+  [selectCart],
+  cart => cart.hidden
+);
+
+const selectCartItemsCount = createSelector(
+  [selectCartItems],
+  cartItems => cartItems.reduce((accumulatedQuantity: number, cartItem: CartItem) => {
+      return accumulatedQuantity + cartItem.quantity
+    }, 0
+  )
+)
 
 
-export { cartReducer, toggleCartHidden, addItem, CartActionTypes, selectCartItems, selectCartItemsCount }
+export {
+  cartReducer,
+  toggleCartHidden,
+  addItem,
+  CartActionTypes,
+  selectCartHidden,
+  selectCartItems,
+  selectCartItemsCount
+}

@@ -1,4 +1,5 @@
 import { User } from "../../interfaces";
+import { createSelector } from "reselect";
 
 const UserActionTypes = {
   SET_CURRENT_USER: 'SET_CURRENT_USER',
@@ -25,4 +26,11 @@ const userReducer = (state: object = INITIAL_STATE, action: any) => {
   }
 }
 
-export { userReducer, setCurrentUser, UserActionTypes }
+const selectUser = (state: any) => state.user;
+
+const selectCurrentUser = createSelector(
+  [selectUser],
+  (user: any) => user.currentUser
+);
+
+export { userReducer, setCurrentUser, selectCurrentUser, UserActionTypes }
