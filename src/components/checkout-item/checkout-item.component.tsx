@@ -1,10 +1,8 @@
 import React from "react";
 import { connect } from 'react-redux';
-import { clearItem } from 'redux/cart';
+import { addItem, clearItem, removeItem } from 'redux/cart';
 import { Item } from "interfaces";
 import './checkout-item.styles.scss';
-
-import {addItem, removeItem} from "redux/cart";
 
 class CheckoutItem extends React.Component<any, any> {
 
@@ -21,7 +19,7 @@ class CheckoutItem extends React.Component<any, any> {
         <div className={'arrow'} onClick={() => this.props.addItem(this.props.cartItem)}>&#10095;</div>
       </span>
       <span className={'price'}>{this.props.cartItem.price}</span>
-      <div className={'remove-button'} onClick={ () => this.props.clearItem(this.props.cartItem) }>&#10005;</div>
+      <div className={'remove-button'} onClick={() => this.props.clearItem(this.props.cartItem)}>&#10005;</div>
     </div>;
   }
 }
