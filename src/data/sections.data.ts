@@ -36,4 +36,4 @@ const SECTIONS_DATA = [
   }
 ];
 
-export default SECTIONS_DATA;
+export { SECTIONS_DATA };
