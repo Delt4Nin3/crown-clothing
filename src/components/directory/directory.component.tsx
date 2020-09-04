@@ -8,8 +8,6 @@ import { createStructuredSelector } from "reselect";
 
 class Directory extends React.Component<any, any> {
   render() {
-    console.log(this.props)
-
     return <div className={'directory-menu'}>
       {
         this.props.sections.map(({id, ...sectionProps}: Section) => (
