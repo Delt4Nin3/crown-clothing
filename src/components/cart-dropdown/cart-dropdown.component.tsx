@@ -2,7 +2,7 @@ import React from "react";
 import CustomButton from "components/custom-button/custom-button.component";
 import { connect } from "react-redux";
 import './cart-dropdown.styles.scss';
-import CartItem from "../cart-item/cart-item.component";
+import CartItem from "components/cart-item/cart-item.component";
 import { CartItem as CartItemType } from 'interfaces';
 import { selectCartItems, toggleCartHidden } from "redux/cart";
 import { createStructuredSelector } from "reselect";

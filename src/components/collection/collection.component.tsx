@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from "react-redux";
 import './collection.styles.scss';
 import { selectCollection } from "redux/shop";
-import CollectionItem from "../collection-item/collection-item.component";
+import CollectionItem from "components/collection-item/collection-item.component";
 import { Item } from "interfaces";
 
 class Collection extends React.Component<any, any> {

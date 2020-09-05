@@ -3,8 +3,8 @@ import './checkout.styles.scss';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from "reselect";
 import { selectCartItems, selectCartTotal } from "redux/cart";
-import { CartItem } from "../../interfaces";
-import CheckoutItem from "../../components/checkout-item/checkout-item.component";
+import { CartItem } from "interfaces";
+import CheckoutItem from "components/checkout-item/checkout-item.component";
 
 class CheckoutPage extends React.Component<any, any> {
   render() {
