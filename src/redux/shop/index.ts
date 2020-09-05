@@ -14,9 +14,21 @@ const shopReducer = (state = INITIAL_STATE, action: any) => {
 
 const selectShop = (state: any) => state.shop;
 
-const selectShopCollections = createSelector(
+const selectCollections = createSelector(
   [selectShop],
   shop => shop.collections
 )
 
-export { shopReducer, selectShopCollections };
+const selectCollection = (collectionUrlParam: any) =>
+  createSelector(
+    [selectCollections],
+    collections => collections[collectionUrlParam]
+  )
+
+const selectCollectionsForPreview = createSelector(
+  [selectCollections],
+  collections => Object.keys(collections).map(key => collections[key])
+)
+
+
+export { shopReducer, selectCollections, selectCollection, selectCollectionsForPreview };
