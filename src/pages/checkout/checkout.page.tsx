@@ -35,7 +35,8 @@ class CheckoutPage extends React.Component<any, any> {
         }
         <span className={'total'}>Total: $ {this.props.cartTotal}</span>
         <div className={'test-warning'}>
-          <a target={'blank'} href={'https://stripe.com/docs/testing#cards'}>* Please use test credit card numbers for payments  *</a>
+          <a target={'blank'} href={'https://stripe.com/docs/testing#cards'}>
+            * Please use test credit card numbers for payments *</a>
         </div>
         <StripeCheckoutButton price={this.props.cartTotal}/>
       </div>

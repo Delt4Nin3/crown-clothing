@@ -12,11 +12,11 @@ class Collection extends React.Component<any, any> {
     return <div className={'collection-page'}>
       <h2 className={'title'}>{title}</h2>
       <div className={'items'}>
-      {
-        items.map((item: Item) => {
-          return <CollectionItem key={item.id} item={item}/>
-        })
-      }
+        {
+          items.map((item: Item) => {
+            return <CollectionItem key={item.id} item={item}/>
+          })
+        }
       </div>
     </div>
   }
