@@ -31,7 +31,7 @@ class Header extends React.Component<Props, any> {
         </Link>
         {
           this.props.currentUser ? (
-            <div className={'option'} onClick={() => auth().signOut()}>SIGN OUT</div>
+            <div className={'option'} onClick={() => auth.signOut()}>SIGN OUT</div>
           ) : (
             <Link className={'option'} to={'/signIn'}>SIGN IN</Link>
           )
