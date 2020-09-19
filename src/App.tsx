@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import 'typeface-open-sans-condensed';
-import './App.css';
+import './App.scss';
 import { connect } from "react-redux";
 import HomePage from "./pages/homepage/homepage.page";
 import ShopPage from "./pages/shop/shop.page";
