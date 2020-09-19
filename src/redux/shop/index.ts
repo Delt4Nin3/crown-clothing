@@ -1,4 +1,3 @@
-import { SHOP_DATA } from "data/shop.data";
 import { createSelector } from "reselect";
 
 const ShopActionTypes = {
@@ -6,7 +5,7 @@ const ShopActionTypes = {
 }
 
 const INITIAL_STATE = {
-  collections: SHOP_DATA,
+  collections: null,
 }
 
 const shopReducer = (state = INITIAL_STATE, action: any) => {
@@ -31,12 +30,12 @@ const selectCollections = createSelector(
 const selectCollection = (collectionUrlParam: any) =>
   createSelector(
     [selectCollections],
-    collections => collections[collectionUrlParam]
+    collections => collections ? collections[collectionUrlParam] : null
   )
 
 const selectCollectionsForPreview = createSelector(
   [selectCollections],
-  collections => Object.keys(collections).map(key => collections[key])
+  collections => collections ? Object.keys(collections).map(key => collections[key]) : []
 )
 
 const updateCollections = (collectionsMap: any) => ({
