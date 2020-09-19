@@ -2,7 +2,7 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
 
-var firebaseConfig = {
+let firebaseConfig = {
   apiKey: "AIzaSyCB2Oy2UqoyItvVBIiftoCshz7gbvMte_0",
   authDomain: "crown-clothing-87048.firebaseapp.com",
   databaseURL: "https://crown-clothing-87048.firebaseio.com",
