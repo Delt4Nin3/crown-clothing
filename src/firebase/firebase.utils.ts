@@ -1,6 +1,7 @@
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
+import { Collection } from "../interfaces";
 
 let firebaseConfig = {
   apiKey: "AIzaSyCB2Oy2UqoyItvVBIiftoCshz7gbvMte_0",
@@ -37,6 +38,21 @@ export const createUserProfileDocument = async (userAuth: any, additionalData?: 
   }
 
   return userRef;
+}
+
+export const convertCollectionSnapshotToMap = (collection: any) => {
+  return collection.docs.map((document: any) => {
+    const {title, items}: Collection = document.data();
+    return {
+      routeName: encodeURI(title.toLowerCase()),
+      id: document.id,
+      title,
+      items,
+    }
+  }).reduce((accumulator: any, collection: Collection) => {
+    accumulator[collection.title.toLowerCase()] = collection;
+    return accumulator;
+  }, {});
 }
 
 firebase.initializeApp(firebaseConfig);
