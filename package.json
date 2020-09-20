@@ -36,7 +36,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "predeploy:firebase": "npm run build",
-    "deploy:firebase": "firebase deploy"
+    "deploy:firebase": "firebase deploy",
+    "webstorm": "webstorm .",
+    "code": "code ."
   },
   "eslintConfig": {
     "extends": "react-app"
